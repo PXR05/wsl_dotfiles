@@ -1,0 +1,24 @@
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                format_left   "{mode} {tabs}"
+                format_right  "{datetime}"
+                format_space  ""
+
+                hide_frame_for_single_pane "true"
+
+                mode_normal  "#[fg=#c3e88d] {name} "
+                mode_locked  "#[fg=#ff5370] {name} "
+
+                tab_normal   "#[fg=#babed8] {name} "
+                tab_active   "#[fg=#89ddff] {name} "
+
+                datetime        "#[fg=#babed8] {format} "
+                datetime_format "%d %b %Y %H:%M"
+                datetime_timezone "Asia/Jakarta"
+            }
+        }
+    }
+}
